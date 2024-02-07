@@ -4,6 +4,8 @@ metadata:
   name: {{ include "poc-service.fullname" . }}
   labels:
     {{- include "poc-service.labels" . | nindent 4 }}
+  annotations:
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: webhooks
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 4
