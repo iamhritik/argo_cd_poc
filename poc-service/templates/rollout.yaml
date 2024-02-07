@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "poc-service.labels" . | nindent 4 }}
   annotations:
-    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: test-argo
+    notifications.argoproj.io/subscribe.on-rollout-completed.slack: test-argo
 spec:
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 4
